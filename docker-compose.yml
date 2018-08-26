@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node:
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/project
+    working_dir: /var/project

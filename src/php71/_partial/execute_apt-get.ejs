@@ -1,0 +1,35 @@
+## only for java installation compatibility
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
+RUN mkdir -p /usr/share/man/man1
+
+RUN apt-get update && apt-get install -y \
+    acl \
+    default-jdk \
+    default-jre \
+    fonts-ipafont \
+    g++ \
+    git \
+    gnupg \
+    groff-base \
+    libexif-dev \
+    libfreetype6-dev \
+    libgd-dev  \
+    libgs-dev \
+    libicu-dev \
+    libjpeg-dev \
+    libjpeg62-turbo-dev \
+    libmagic-dev  \
+    libmagickwand-dev \
+    libmcrypt-dev \
+    libmcrypt4 \
+    libpng++-dev \
+    libpng-dev \
+    libvpx-dev  \
+    make \
+    mysql-client \
+    openssh-client \
+    openssl \
+    python-pip \
+    wget \
+    zlib1g-dev \
+    && apt-get clean
