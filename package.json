@@ -1,0 +1,23 @@
+{
+  "name": "docker-php",
+  "version": "0.0.1",
+  "description": "Dockerfiles intended to serve base images for php application development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-th7:tommyheavenly7/dockerfile-builder.git"
+  },
+  "keywords": [],
+  "author": "Tomo Lance Miamoto",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-ejs": "^3.1.3"
+  }
+}
