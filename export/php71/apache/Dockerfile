@@ -8,10 +8,10 @@ RUN a2enmod rewrite \
     && a2enmod headers \
     && a2enmod ssl
 
-ENV HTTPDUSER=www-data
 RUN usermod -u 1000 www-data
+ENV HTTPDUSER=www-data
 
-## only for compatibility for java installation
+## only for java installation compatibility
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
 RUN mkdir -p /usr/share/man/man1
 
@@ -100,6 +100,3 @@ RUN printf "[date]\ndate.timezone=Etc/UTC" > /usr/local/etc/php/conf.d/date.ini 
 
 # clean up
 RUN rm -rf /var/lib/apt/lists/*
-
-# workingdir
-RUN mkdir -p /var/www/project

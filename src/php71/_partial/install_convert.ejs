@@ -1,0 +1,8 @@
+# imagemagick release versions: http://www.imagemagick.org/download/
+RUN cd /tmp \
+    && wget http://www.imagemagick.org/download/ImageMagick.tar.gz \
+    && tar xzvf ImageMagick.tar.gz \
+    && cd ImageMagick* \
+    && ./configure --prefix=/usr --with-webp=no \
+    && make \
+    && make install
