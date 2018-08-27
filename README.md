@@ -3,14 +3,13 @@ Dockerfiles for php application development.
 
 ## Purpose
 This repository provides Dockerfiles as base images for php application development. 
-**Please don't think to use them in production environment.** You might face with 
+**Please don't think to use them in production.** You might face with 
 various kind of issues in production use. 
 
 Dockerfiles in here are based on [official PHP images](https://hub.docker.com/_/php/), 
-but they also contain *AWS CLI*, *Ghostscript* and *ImageMagick*. If you intend to 
-handle image or PDF files, one of Dockerfiles could be a shortcut to build your own 
-docker images for application development. 
-
+and they additionally contain *AWS CLI*, *Ghostscript* and *ImageMagick*. 
+If you intend to handle image or PDF files, they might help you build your own docker 
+image.
 
 ## PHP Information
 
@@ -106,36 +105,4 @@ Copyright: © 1999-2018 ImageMagick Studio LLC
 License: https://www.imagemagick.org/script/license.php
 Features: Cipher DPC HDRI OpenMP
 Delegates (built-in): bzlib djvu fontconfig freetype gvc jbig jng jpeg lcms lqr lzma openexr png tiff wmf x xml zlib
-```
-## Appendix
-### References
-#### Builder
-+ [gulp.js](https://gulpjs.com/)
-+ [Use latest JavaScript version in your gulpfile](https://github.com/gulpjs/gulp#use-latest-javascript-version-in-your-gulpfile)
-+ [babel-preset-es2015 -> babel-preset-env](http://babeljs.io/docs/en/env/)
-
-### Build Command Snippets
-#### Basic usage
-```shell
-$ var/bin/node.sh node --version
-v8.11.4 
-
-$ var/bin/node.sh npm dedupe
-$ var/bin/node.sh npm ls --depth=0
-docker-php@0.0.1 /var/project
-+-- babel-preset-env@1.7.0
-+-- babel-register@6.26.0
-+-- del@3.0.0
-+-- gulp@4.0.0
-`-- gulp-ejs@3.1.3
-```
-#### Update dependencies
-```shell
-$ var/bin/node.sh npm install
-$ var/bin/node.sh ncu
-$ var/bin/node.sh ncu -u
-```
-### Run gulp task
-```shell
-$ var/bin/node.sh npx gulp php71
 ```
