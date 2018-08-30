@@ -11,16 +11,16 @@ RUN a2enmod rewrite \
 RUN usermod -u 1000 www-data
 ENV HTTPDUSER=www-data
 
-<%- include('../_partial/execute_apt-get') %>
+<%- include('../../_partial/execute_apt-get') %>
 
-<%- include('../_partial/install_gs') %>
+<%- include('../../_partial/install_gs') %>
 
-<%- include('../_partial/install_convert') %>
+<%- include('../../_partial/install_convert') %>
 
-<%- include('../_partial/install_node') %>
+<%- include('../../_partial/install_node') %>
 
-<%- include('../_partial/install_aws-cli') %>
+<%- include('../../_partial/install_aws-cli') %>
 
-<%- include('../_partial/install_php-modules') %>
+<%- include('../../_partial/install_php-modules') %>
 
-<%- include('../_partial/execute_cleanup') %>
+<%- include('../../_partial/execute_cleanup') %>
