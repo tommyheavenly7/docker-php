@@ -2,7 +2,7 @@
 ## tommynovember7/php71
 ###
 
-FROM php:7.1-cli
+FROM php:7.1-cli-stretch
 
 <%- include('./_partial/execute_apt-get') %>
 
