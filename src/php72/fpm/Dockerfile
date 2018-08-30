@@ -1,15 +1,8 @@
 ###
-## tommynovember7/php71-apache
+## tommynovember7/php71-fpm
 ###
 
-FROM php:7.1-apache-stretch
-
-RUN a2enmod rewrite \
-    && a2enmod headers \
-    && a2enmod ssl
-
-RUN usermod -u 1000 www-data
-ENV HTTPDUSER=www-data
+FROM php:7.2-fpm-stretch
 
 <%- include('../../_partial/execute_apt-get') %>
 
