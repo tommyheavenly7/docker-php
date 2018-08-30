@@ -1,8 +1,15 @@
 ###
-## tommynovember7/php71
+## tommynovember7/php71-apache
 ###
 
-FROM php:7.1-cli-stretch
+FROM php:7.2-apache-stretch
+
+RUN a2enmod rewrite \
+    && a2enmod headers \
+    && a2enmod ssl
+
+RUN usermod -u 1000 www-data
+ENV HTTPDUSER=www-data
 
 ## only for java installation compatibility
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
