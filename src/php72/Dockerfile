@@ -16,4 +16,6 @@ FROM php:7.2-cli-stretch
 
 <%- include('../_partial/install_php-modules') %>
 
+<%- include('../_partial/install_sodium-module') %>
+
 <%- include('../_partial/execute_cleanup') %>

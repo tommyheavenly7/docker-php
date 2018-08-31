@@ -16,4 +16,6 @@ FROM php:7.1-fpm-stretch
 
 <%- include('../../_partial/install_php-modules') %>
 
+<%- include('../../_partial/install_mcrypt-module') %>
+
 <%- include('../../_partial/execute_cleanup') %>

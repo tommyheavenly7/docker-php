@@ -33,8 +33,6 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libmagic-dev  \
     libmagickwand-dev \
-    libmcrypt-dev \
-    libmcrypt4 \
     libpng++-dev \
     libpng-dev \
     libvpx-dev  \
@@ -44,8 +42,7 @@ RUN apt-get update && apt-get install -y \
     openssl \
     python-pip \
     wget \
-    zlib1g-dev \
-    && apt-get clean
+    zlib1g-dev
 
 # ghostscript release versions: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 RUN cd /tmp \
@@ -79,7 +76,6 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-install exif \
     && docker-php-ext-install gd \
-    && docker-php-ext-install mcrypt \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
     && docker-php-ext-install pcntl \
@@ -98,5 +94,11 @@ RUN pecl install xdebug \
 RUN printf "[date]\ndate.timezone=Etc/UTC" > /usr/local/etc/php/conf.d/date.ini \
     && echo "memory_limit=512M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
+# mcrypt
+RUN apt-get update && apt-get install -y \
+    libmcrypt-dev \
+    && docker-php-ext-install mcrypt
+
 # clean up
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
