@@ -1,39 +1,53 @@
 # Basic Usage
 
-## Gulp
-### Run build task
+## Setup
+
 ```shell
-$ var/bin/node.sh npx gulp build
+source docker/.bashrc
+```
+
+## Gulp
+
+### Run build task
+
+```shell
+run npx gulp build
 ```
 
 ## Node
+
 ### Version
+
 ```shell
-$ var/bin/node.sh node --version
-v8.11.4 
+$ run node --version
+v10.15.0 
 ```
 
 ### Install dependencies
+
 ```shell
-$ var/bin/node.sh npm install
-$ var/bin/node.sh npm dedupe
-$ var/bin/node.sh npm ls --depth=0
+$ run npm install
+$ run npm dedupe
+$ run npm ls --depth=0
 docker-php@0.0.1 /var/project
-+-- babel-preset-env@1.7.0
-+-- babel-register@6.26.0
++-- @babel/core@7.2.2
++-- @babel/preset-env@7.3.1
++-- @babel/register@7.0.0
 +-- del@3.0.0
 +-- gulp@4.0.0
-`-- gulp-ejs@3.1.3
+`-- gulp-ejs@3.3.0
 ```
 
 ### Update dependencies
+
 ```shell
-$ var/bin/node.sh npm install
-$ var/bin/node.sh ncu
-$ var/bin/node.sh ncu -u
+run ncu
+run ncu -a
+run npm install
 ```
 
-## References
+## Appendix
+
 ### Builder
 + [gulp.js](https://gulpjs.com/)
 + [Use latest JavaScript version in your gulpfile](https://github.com/gulpjs/gulp#use-latest-javascript-version-in-your-gulpfile)
