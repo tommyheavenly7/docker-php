@@ -46,9 +46,9 @@ RUN apt-get update && apt-get install -y \
 
 # ghostscript release versions: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 RUN cd /tmp \
-    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26-linux-x86_64.tgz \
-    && tar xzvf ghostscript-9.26-linux-x86_64.tgz \
-    && cd ghostscript-9.26-linux-x86_64 \
+    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.gz \
+    && tar xzvf ghostscript-9.26.tar.gz \
+    && cd ghostscript-9.26 \
     && ./configure --disable-compile-inits --with-drivers=ALL --without-luratech --with-libiconv=gnu --prefix=/usr \
     && make \
     && make install
@@ -66,7 +66,7 @@ RUN cd /tmp \
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
-    && npm install -g npm-check-updates
+    && npm install -g npm-check-updates \
     && npm install -g yarn \
     && yarn global add prettier
 
