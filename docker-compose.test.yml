@@ -20,18 +20,18 @@ services:
 
   sut-php72:
     build:
-      context: ./export/php71
+      context: ./export/php72
       dockerfile: Dockerfile
     command: ['/var/run_tests.sh']
 
   sut-php72-apache:
     build:
-      context: ./export/php71/apache
+      context: ./export/php72/apache
       dockerfile: Dockerfile
     command: ['/var/run_tests.sh']
 
   sut-php72-fpm:
     build:
-      context: ./export/php71/apache
+      context: ./export/php72/apache
       dockerfile: Dockerfile
     command: ['/var/run_tests.sh']
