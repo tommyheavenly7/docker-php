@@ -2,7 +2,7 @@
 ## tommynovember7/php71-fpm
 ###
 
-FROM php:7.2-fpm-stretch
+FROM php:7.1-fpm-stretch
 
 <%- include('../../_partial/execute_apt-get') %>
 
@@ -16,6 +16,8 @@ FROM php:7.2-fpm-stretch
 
 <%- include('../../_partial/install_php-modules') %>
 
-<%- include('../../_partial/install_sodium-module') %>
+<%- include('../../_partial/install_mcrypt-module') %>
 
 <%- include('../../_partial/execute_cleanup') %>
+
+<%- include('../../_partial/install_tests') %>

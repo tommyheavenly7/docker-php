@@ -1,0 +1,5 @@
+version: '3.5'
+services:
+  sut:
+    build: .
+    command: ['/var/run_tests.sh']

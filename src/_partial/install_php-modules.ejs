@@ -10,7 +10,7 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-install zip
 
 ## see versions https://pecl.php.net/package/imagick, if failed
-RUN pecl install imagick-3.4.3 \
+RUN pecl install imagick-<%=versions.imagic%> \
     && docker-php-ext-enable imagick
 
 ## see versions https://xdebug.org/download.php, if failed

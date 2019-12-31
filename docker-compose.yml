@@ -9,15 +9,6 @@ services:
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/node"]
 
-  yarn:
-    build:
-      context: docker/node
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/var/project
-    working_dir: /var/project
-    entrypoint: ["/usr/local/bin/yarn"]
-
   npm:
     build:
       context: docker/node

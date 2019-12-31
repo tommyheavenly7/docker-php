@@ -1,1 +1,1 @@
-export PATH="./docker/bin:$PATH"
+export PATH="./docker/bin:../docker/bin:../../docker/bin:$PATH"

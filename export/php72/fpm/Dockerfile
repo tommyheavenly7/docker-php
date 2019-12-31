@@ -39,9 +39,9 @@ RUN apt-get update && apt-get install -y \
 
 # ghostscript release versions: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 RUN cd /tmp \
-    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.gz \
-    && tar xzvf ghostscript-9.26.tar.gz \
-    && cd ghostscript-9.26 \
+    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.gz \
+    && tar xzvf ghostscript-9.50.tar.gz \
+    && cd ghostscript-9.50 \
     && ./configure --disable-compile-inits --with-drivers=ALL --without-luratech --with-libiconv=gnu --prefix=/usr \
     && make \
     && make install
@@ -78,7 +78,7 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-install zip
 
 ## see versions https://pecl.php.net/package/imagick, if failed
-RUN pecl install imagick-3.4.3 \
+RUN pecl install imagick-3.4.4 \
     && docker-php-ext-enable imagick
 
 ## see versions https://xdebug.org/download.php, if failed
@@ -96,3 +96,5 @@ RUN apt-get update && apt-get install -y libsodium-dev \
 # clean up
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+ADD ./run_tests.sh /var/run_tests.sh

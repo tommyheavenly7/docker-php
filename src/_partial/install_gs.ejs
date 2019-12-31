@@ -1,8 +1,10 @@
-# ghostscript release versions: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
+<%
+const dirName = versions.gs.replace(/\./g, '');
+%># ghostscript release versions: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 RUN cd /tmp \
-    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.gz \
-    && tar xzvf ghostscript-9.26.tar.gz \
-    && cd ghostscript-9.26 \
+    && wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs<%=dirName%>/ghostscript-<%=versions.gs%>.tar.gz \
+    && tar xzvf ghostscript-<%=versions.gs%>.tar.gz \
+    && cd ghostscript-<%=versions.gs%> \
     && ./configure --disable-compile-inits --with-drivers=ALL --without-luratech --with-libiconv=gnu --prefix=/usr \
     && make \
     && make install

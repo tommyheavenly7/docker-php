@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+  sut-php71:
+    build:
+      context: ./export/php71
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php71-apache:
+    build:
+      context: ./export/php71/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php71-fpm:
+    build:
+      context: ./export/php71/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php72:
+    build:
+      context: ./export/php71
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php72-apache:
+    build:
+      context: ./export/php71/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php72-fpm:
+    build:
+      context: ./export/php71/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
