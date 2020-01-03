@@ -1,6 +1,9 @@
 name: Docker Hub Description Sync
 
-on: [push]
+on:
+  push:
+    branches:
+      - master  
 
 jobs:
 
@@ -9,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker Hub README & description sync
-      uses: meeDamian/sync-readme@v1.0.6
-      with:
-        user: ${{ secrets.DOCKERHUB_USERNAME }}
-        pass: ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Docker Hub Description
+      uses: peter-evans/dockerhub-description@v2.1.0
+      env:
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        DOCKERHUB_REPOSITORY: tommynovember7/docker-php
