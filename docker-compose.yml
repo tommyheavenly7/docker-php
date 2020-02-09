@@ -1,37 +1,41 @@
-version: '3'
+version: '3.5'
 services:
   node:
-    build:
-      context: ./docker/node
-      dockerfile: Dockerfile
+    container_name: docker-php-node
+    image: tommynovember7/docker-node:node10
     volumes:
       - ./:/var/project
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/node"]
 
   npm:
-    build:
-      context: docker/node
-      dockerfile: Dockerfile
+    container_name: docker-php-npm
+    image: tommynovember7/docker-node:node10
     volumes:
       - ./:/var/project
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/npm"]
 
   npx:
-    build:
-      context: docker/node
-      dockerfile: Dockerfile
+    container_name: docker-php-npx
+    image: tommynovember7/docker-node:node10
     volumes:
       - ./:/var/project
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/npx"]
 
   ncu:
-    build:
-      context: docker/node
-      dockerfile: Dockerfile
+    container_name: docker-php-ncu
+    image: tommynovember7/docker-node:node10
     volumes:
       - ./:/var/project
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/ncu"]
+
+  gulp:
+    container_name: docker-php-gulp
+    image: tommynovember7/docker-node:node10
+    volumes:
+      - ./:/var/project
+    working_dir: /var/project
+    entrypoint: ["/usr/local/bin/gulp"]
