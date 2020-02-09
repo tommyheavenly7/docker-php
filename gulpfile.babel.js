@@ -6,12 +6,12 @@ import gulp from 'gulp';
 import rename from 'gulp-rename';
 
 const json = JSON.parse(fs.readFileSync('./src/versions.json', 'utf-8'));
-const clean = _ => del(['export/php71/*', 'export/php72/*']);
-const php = _ => gulp.src('./src/**/Dockerfile.ejs').
+const clean = () => del(['export/php71/*', 'export/php72/*']);
+const php = () => gulp.src('./src/**/Dockerfile.ejs').
     pipe(ejs({versions: json}, {}, {ext: ''})).
     pipe(rename({extname: ''})).
     pipe(gulp.dest('./export'));
-const tests = _ => gulp.src('./src/test/*').
+const tests = () => gulp.src('./src/test/*').
     pipe(ejs({}, {}, {ext: ''})).
     pipe(gulp.dest('./export/php71/apache')).
     pipe(gulp.dest('./export/php71/fpm')).
