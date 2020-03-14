@@ -14,9 +14,9 @@
   "author": "Tomo Lance Miamoto",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/register": "^7.8.3",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
     "del": "^5.1.0",
     "dep": "^0.18.2",
     "eslint": "^6.8.0",
