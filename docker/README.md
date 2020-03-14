@@ -11,7 +11,7 @@ source docker/.bashrc
 ### Run build task
 
 ```shell
-run npx gulp build
+npx gulp build
 ```
 
 ## Node
@@ -19,31 +19,36 @@ run npx gulp build
 ### Version
 
 ```shell
-$ run node --version
-v10.15.0 
+$ node --version
+v10.18.1 
 ```
 
 ### Install dependencies
 
 ```shell
-$ run npm install
-$ run npm dedupe
-$ run npm ls --depth=0
-docker-php@0.0.1 /var/project
-+-- @babel/core@7.2.2
-+-- @babel/preset-env@7.3.1
-+-- @babel/register@7.0.0
-+-- del@3.0.0
-+-- gulp@4.0.0
-`-- gulp-ejs@3.3.0
+$ npm install
+$ npm dedupe
+$ npm ls --depth=0
+  docker-php@0.0.1 /var/project
+  +-- @babel/core@7.8.7
+  +-- @babel/preset-env@7.8.7
+  +-- @babel/register@7.8.6
+  +-- del@5.1.0
+  +-- dep@0.18.2
+  +-- eslint@6.8.0
+  +-- eslint-config-prettier@6.10.0
+  +-- gulp@4.0.2
+  +-- gulp-ejs@5.0.0
+  +-- gulp-rename@2.0.0
+  `-- prettier@1.19.1
 ```
 
 ### Update dependencies
 
 ```shell
-run ncu
-run ncu -a
-run npm install
+ncu
+ncu -a
+npm install
 ```
 
 ## Appendix
