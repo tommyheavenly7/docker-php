@@ -86,7 +86,7 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
 
 ## add ini
 RUN printf "[date]\ndate.timezone=Etc/UTC" > /usr/local/etc/php/conf.d/date.ini \
-    && echo "memory_limit=512M" > /usr/local/etc/php/conf.d/memory-limit.ini
+    && echo "memory_limit=512M" > /usr/local/etc/php/conf.d/memory-limit.ini \
     && echo "output_buffering = On" > /usr/local/etc/php/conf.d/output-buffering.ini \
     && echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/mail.ini \
     && printf "[mbstring]\nmbstring.internal_encoding = %s\nmbstring.language = %s\n" 'UTF-8' 'Japanese' > /usr/local/etc/php/conf.d/mbstring.ini \
