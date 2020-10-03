@@ -1,5 +1,5 @@
 ###
-## tommynovember7/php71-apache
+## tommynovember7/php72-apache
 ###
 
 FROM php:7.2-apache-stretch
@@ -13,17 +13,11 @@ ENV HTTPDUSER=www-data
 
 <%- include('../../_partial/execute_apt-get') %>
 
-<%- include('../../_partial/install_gs') %>
-
-<%- include('../../_partial/install_convert') %>
-
 <%- include('../../_partial/install_node') %>
 
 <%- include('../../_partial/install_aws-cli') %>
 
 <%- include('../../_partial/install_php-modules') %>
-
-<%- include('../../_partial/install_sodium-module') %>
 
 <%- include('../../_partial/execute_cleanup') %>
 

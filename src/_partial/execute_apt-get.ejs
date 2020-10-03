@@ -4,14 +4,18 @@ RUN mkdir -p /usr/share/man/man1
 
 RUN apt-get update && apt-get install -y \
     acl \
+    build-essential \
     default-jdk \
     default-jre \
     fonts-ipafont \
     g++ \
+    ghostscript \
     git \
     gnupg \
     groff-base \
+    imagemagick \
     libexif-dev \
+    libffi-dev \
     libfreetype6-dev \
     libgd-dev  \
     libgs-dev \
@@ -22,11 +26,15 @@ RUN apt-get update && apt-get install -y \
     libmagickwand-dev \
     libpng++-dev \
     libpng-dev \
+    libssl-dev \
     libvpx-dev  \
     make \
     mysql-client \
     openssh-client \
     openssl \
     python-pip \
+    python3-dev \
+    python3-pip \
+    ssmtp \
     wget \
     zlib1g-dev

@@ -1,8 +1,8 @@
 ###
-## tommynovember7/php71-fpm
+## tommynovember7/php73
 ###
 
-FROM php:7.1-fpm-stretch
+FROM php:7.3-cli-stretch
 
 ## only for java installation compatibility
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
