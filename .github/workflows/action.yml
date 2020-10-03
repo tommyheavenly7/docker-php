@@ -27,15 +27,15 @@ jobs:
 
       - name: Run tests
         run: |
+          docker-compose --file docker-compose.test.yml run --rm sut-php71
+          docker-compose --file docker-compose.test.yml run --rm sut-php71-apache
+          docker-compose --file docker-compose.test.yml run --rm sut-php71-fpm
           docker-compose --file docker-compose.test.yml run --rm sut-php72
           docker-compose --file docker-compose.test.yml run --rm sut-php72-apache
           docker-compose --file docker-compose.test.yml run --rm sut-php72-fpm
           docker-compose --file docker-compose.test.yml run --rm sut-php73
           docker-compose --file docker-compose.test.yml run --rm sut-php73-apache
           docker-compose --file docker-compose.test.yml run --rm sut-php73-fpm
-          docker-compose --file docker-compose.test.yml run --rm sut-php74
-          docker-compose --file docker-compose.test.yml run --rm sut-php74-apache
-          docker-compose --file docker-compose.test.yml run --rm sut-php74-fpm
 
   build_images:
     needs: run_tests
