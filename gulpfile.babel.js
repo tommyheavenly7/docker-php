@@ -6,7 +6,7 @@ import gulp from 'gulp';
 import rename from 'gulp-rename';
 
 const json = JSON.parse(fs.readFileSync('./src/versions.json', 'utf-8'));
-const clean = () => del(['export/php71/*', 'export/php72/*']);
+const clean = () => del(['export/php71/*', 'export/php72/*', 'export/php73/*']);
 const php = () => gulp.src('./src/**/Dockerfile.ejs').
     pipe(ejs({versions: json}, {}, {ext: ''})).
     pipe(rename({extname: ''})).
@@ -18,7 +18,10 @@ const tests = () => gulp.src('./src/test/*').
     pipe(gulp.dest('./export/php71')).
     pipe(gulp.dest('./export/php72/apache')).
     pipe(gulp.dest('./export/php72/fpm')).
-    pipe(gulp.dest('./export/php72'));
+    pipe(gulp.dest('./export/php72')).
+    pipe(gulp.dest('./export/php73/apache')).
+    pipe(gulp.dest('./export/php73/fpm')).
+    pipe(gulp.dest('./export/php73'));
 const build = gulp.series(clean, gulp.parallel(php, tests));
 
 gulp.task('clean', clean);

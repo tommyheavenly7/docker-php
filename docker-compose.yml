@@ -2,40 +2,13 @@ version: '3.5'
 services:
   node:
     container_name: docker-php-node
-    image: tommynovember7/docker-node:node10
+    image: docker.pkg.github.com/tommyheavenly7/docker-node/node12:latest
     volumes:
-      - ./:/var/project
+      - "./:/var/project:delegated"
+      - "node-dependencies:/var/project/node_modules"
+      - "./docker/.volumes/npm:/root/.npm:delegated"
     working_dir: /var/project
     entrypoint: ["/usr/local/bin/node"]
 
-  npm:
-    container_name: docker-php-npm
-    image: tommynovember7/docker-node:node10
-    volumes:
-      - ./:/var/project
-    working_dir: /var/project
-    entrypoint: ["/usr/local/bin/npm"]
-
-  npx:
-    container_name: docker-php-npx
-    image: tommynovember7/docker-node:node10
-    volumes:
-      - ./:/var/project
-    working_dir: /var/project
-    entrypoint: ["/usr/local/bin/npx"]
-
-  ncu:
-    container_name: docker-php-ncu
-    image: tommynovember7/docker-node:node10
-    volumes:
-      - ./:/var/project
-    working_dir: /var/project
-    entrypoint: ["/usr/local/bin/ncu"]
-
-  gulp:
-    container_name: docker-php-gulp
-    image: tommynovember7/docker-node:node10
-    volumes:
-      - ./:/var/project
-    working_dir: /var/project
-    entrypoint: ["/usr/local/bin/gulp"]
+volumes:
+  node-dependencies:
