@@ -35,3 +35,21 @@ services:
       context: ./export/php72/apache
       dockerfile: Dockerfile
     command: ['/var/run_tests.sh']
+
+  sut-php73:
+    build:
+      context: ./export/php73
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php73-apache:
+    build:
+      context: ./export/php73/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
+
+  sut-php73-fpm:
+    build:
+      context: ./export/php73/apache
+      dockerfile: Dockerfile
+    command: ['/var/run_tests.sh']
