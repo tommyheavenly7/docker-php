@@ -51,6 +51,10 @@ jobs:
       - name: Build a new container
         run: |
           echo ${{ secrets.PACKAGE_TOKEN }} | docker login docker.pkg.github.com -u tommyheavenly7 --password-stdin
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.1 ./export/php71
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.1
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.1 ./export/php71
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.1
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.2 ./export/php72
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.2
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.2 ./export/php72
@@ -59,10 +63,10 @@ jobs:
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.3
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.3 ./export/php73
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.3
-          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.4 ./export/php74
-          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:7.4
-          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.4 ./export/php74
-          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-cli:${{ steps.vars.outputs.tag }}-7.4
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.1 ./export/php71/fpm
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.1
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.1 ./export/php71/fpm
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.1
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.2 ./export/php72/fpm
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.2
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.2 ./export/php72/fpm
@@ -71,10 +75,10 @@ jobs:
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.3
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.3 ./export/php73/fpm
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.3
-          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.4 ./export/php74/fpm
-          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:7.4
-          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.4 ./export/php74/fpm
-          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-fpm:${{ steps.vars.outputs.tag }}-7.4
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:7.1 ./export/php71/apache
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:7.1
+          docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:${{ steps.vars.outputs.tag }}-7.1 ./export/php71/apache
+          docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:${{ steps.vars.outputs.tag }}-7.1
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:7.2 ./export/php72/apache
           docker push docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:7.2
           docker build --pull --tag docker.pkg.github.com/tommyheavenly7/docker-php/php-apache:${{ steps.vars.outputs.tag }}-7.2 ./export/php72/apache
